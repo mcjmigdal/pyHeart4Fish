@@ -1168,7 +1168,7 @@ def process_raw_data_and_plot_heart_beat_curve():
         process_raw_data_output = open(process_raw_data_output_file, 'w')
         colnames = [f"Time (s) / {frames_per_second} frames/s", "Atrium Heartbeat (RU)",
                     "Atrium Heartbeat (RU) best fit", "Ventricle Heartbeat (RU)",
-                    "Ventricle Heartbeat (RU)", "Ventricle Heartbeat (RU) best fit",
+                    "Ventricle Heartbeat (RU) best fit",
                     "Atrium Heartbeat (RU) normalized", "Ventricle Heartbeat (RU) normalized"]
         print(",".join(colnames), file=process_raw_data_output)
         for xval, aval, afit, vval, vfit, aval_narm, vval_norm in zip(x_values, atrium_values, fitfunc_atrium,
