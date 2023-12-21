@@ -1165,7 +1165,7 @@ def process_raw_data_and_plot_heart_beat_curve():
 
     if True:
         process_raw_data_output_file = main_output_path + f"{fish_heart_file}_frequencies_fps{frames_per_second}.csv"
-        process_raw_data_output = open(process_raw_data_output, 'w')
+        process_raw_data_output = open(process_raw_data_output_file, 'w')
         colnames = [f"Time (s) / {frames_per_second} frames/s", "Atrium Heartbeat (RU)",
                     "Atrium Heartbeat (RU) best fit", "Ventricle Heartbeat (RU)",
                     "Ventricle Heartbeat (RU)", "Ventricle Heartbeat (RU) best fit",
