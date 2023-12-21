@@ -1174,7 +1174,7 @@ def process_raw_data_and_plot_heart_beat_curve():
         for xval, aval, afit, vval, vfit, aval_narm, vval_norm in zip(x_values, atrium_values, fitfunc_atrium,
                                                                       ventricle_values, fitfunc_ventricle,
                                                                       atrium_values_norm, ventricle_values_norm):
-            print(",".join([xval, aval, afit, vval, vfit, aval_narm, vval_norm]), file=process_raw_data_output)
+            print(f"{xval}, {aval}, {afit}, {vval}, {vfit}, {aval_narm}, {vval_norm}", file=process_raw_data_output)
         process_raw_data_output.close()
 
 
