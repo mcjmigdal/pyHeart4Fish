@@ -1098,7 +1098,7 @@ def process_raw_data_and_plot_heart_beat_curve():
     value_dict["Auto_Corr_ventr"] = auto_corr_coeff2
 
     # plot heartbeat signals
-    plt.figure(fish_heart_file, figsize=(10, 6))
+    plt.figure(fish_heart_file, figsize=(10, 12))
     plt.title(fish_heart_file)
     plt.subplots_adjust(hspace=0.56)
     x_values = [i/len(ventricle_values) * cut_movie_at for i in range(1, len(ventricle_values) + 1)]
