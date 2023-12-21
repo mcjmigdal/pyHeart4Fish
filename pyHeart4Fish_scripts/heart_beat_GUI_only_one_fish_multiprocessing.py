@@ -1163,6 +1163,20 @@ def process_raw_data_and_plot_heart_beat_curve():
         os.startfile(main_output_path + "/%s_frequencies_fps%s.png" % (fish_heart_file, frames_per_second))
     plt.close()
 
+    if True:
+        process_raw_data_output_file = main_output_path + f"{fish_heart_file}_frequencies_fps{frames_per_second}.csv"
+        process_raw_data_output = open(process_raw_data_output, 'w')
+        colnames = [f"Time (s) / {frames_per_second} frames/s", "Atrium Heartbeat (RU)",
+                    "Atrium Heartbeat (RU) best fit", "Ventricle Heartbeat (RU)",
+                    "Ventricle Heartbeat (RU)", "Ventricle Heartbeat (RU) best fit",
+                    "Atrium Heartbeat (RU) normalized", "Ventricle Heartbeat (RU) normalized"]
+        print(",".join(colnames), file=process_raw_data_output)
+        for xval, aval, afit, vval, vfit, aval_narm, vval_norm in zip(x_values, atrium_values, fitfunc_atrium,
+                                                                      ventricle_values, fitfunc_ventricle,
+                                                                      atrium_values_norm, ventricle_values_norm):
+            print(",".join([xval, aval, afit, vval, vfit, aval_narm, vval_norm]), file=process_raw_data_output)
+        process_raw_data_output.close()
+
 
 def create_gifs_from_images():
     # create gifs and store in project subfolder
